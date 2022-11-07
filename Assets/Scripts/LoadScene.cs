@@ -1,9 +1,9 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneManager : MonoBehaviour
+public class LoadScene : MonoBehaviour
 {
 
     [SerializeField] float delayOnSceneLoad = 3.5f;
@@ -12,7 +12,7 @@ public class SceneManager : MonoBehaviour
 
     private void Start()
     {
-        currentSceneIndex = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentSceneIndex == 0)
             StartCoroutine(WaitForTime());
     }
@@ -25,7 +25,12 @@ public class SceneManager : MonoBehaviour
 
     public void LoadNextScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
+    
+	public void LoadLoseScreen()
+	{
+		SceneManager.LoadScene("Lose Screen");
+	}
 
 }
