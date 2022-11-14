@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LoadScene : MonoBehaviour
+public class LevelLoader : MonoBehaviour
 {
 
     [SerializeField] float delayOnSceneLoad = 3.5f;
@@ -22,6 +22,18 @@ public class LoadScene : MonoBehaviour
         yield return new WaitForSeconds(delayOnSceneLoad);
         LoadNextScene();
     }
+    
+	public void LoadStartingScene()
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadScene(1);
+	}
+	
+	public void LoadCurrentScene()
+	{
+		Time.timeScale = 1;
+		SceneManager.LoadScene(currentSceneIndex);
+	}
 
     public void LoadNextScene()
     {
@@ -31,6 +43,11 @@ public class LoadScene : MonoBehaviour
 	public void LoadLoseScreen()
 	{
 		SceneManager.LoadScene("Lose Screen");
+	}
+	
+	public void QuitGame()
+	{
+		Application.Quit();
 	}
 
 }
