@@ -7,10 +7,12 @@ public class OptionsController : MonoBehaviour
 {
 	[SerializeField] Slider volumeSlider;
 	[SerializeField] float defaultVolume = 0.8f;
-	
+	[SerializeField] Slider difficultySlider;
+	[SerializeField] float defaultDifficulty = 0f;
 	private void Start()
 	{
 		volumeSlider.value = PlayerPrefsController.GetMasterVolume();
+		difficultySlider.value = PlayerPrefsController.GetDifficulty();
 	}
 
 	private void Update()
@@ -29,6 +31,7 @@ public class OptionsController : MonoBehaviour
 	public void SaveAndExit()
 	{
 		PlayerPrefsController.SetMasterVolume(volumeSlider.value);
+		PlayerPrefsController.SetDifficulty(difficultySlider.value);
 		FindObjectOfType<LevelLoader>().LoadStartingScene();
 	}
 	
@@ -40,5 +43,6 @@ public class OptionsController : MonoBehaviour
 	private void SetDefaultVolume()
 	{
 		volumeSlider.value = defaultVolume;
+		difficultySlider.value = defaultDifficulty;
 	}
 }
