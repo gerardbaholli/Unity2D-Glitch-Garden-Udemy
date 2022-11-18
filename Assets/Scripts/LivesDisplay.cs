@@ -9,13 +9,13 @@ public class LivesDisplay : MonoBehaviour
 	[SerializeField] int damage = 1;
 	float lives;
 	TextMeshProUGUI livesText;
+	
     
 	private void Start()
 	{
 		lives = baseLives - PlayerPrefsController.GetDifficulty();
 		livesText = GetComponent<TextMeshProUGUI>();
 		UpdateDisplay();
-		Debug.Log("Difficulty setting current is " + PlayerPrefsController.GetDifficulty());
 	}
 
 	private void UpdateDisplay()

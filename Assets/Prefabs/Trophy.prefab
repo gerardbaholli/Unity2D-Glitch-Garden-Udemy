@@ -204,7 +204,7 @@ Transform:
   - {fileID: 6008939391561895744}
   - {fileID: 5999061404533130870}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6008939392471158056
 Animator:
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b914f8b74b3e94dbedc261a8c227a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCost: 100
+  starCost: 50
 --- !u!114 &5572221707185288241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb46cc50b4243c4a9b200948414f209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 20
   deathVFX: {fileID: 0}
 --- !u!1 &7333771906332026919
 GameObject:

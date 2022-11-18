@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DefenderButton : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class DefenderButton : MonoBehaviour
     private DefenderSpawner defenderSpawner;
 
     private void Start()
-    {
+	{
+		LabelButtonWithCost();
         defenderSpawner = FindObjectOfType<DefenderSpawner>();
     }
 
@@ -26,5 +28,18 @@ public class DefenderButton : MonoBehaviour
 
         defenderSpawner.SetSelectedDefender(defenderPrefab);
     }
+    
+	private void LabelButtonWithCost()
+	{
+		TextMeshProUGUI costText = GetComponentInChildren<TextMeshProUGUI>();
+		if (!costText)
+		{
+			Debug.LogError(name + " has no cost text.");
+		}
+		else
+		{	
+			costText.text = defenderPrefab.GetStarCost().ToString();
+		}
+	}
 
 }
