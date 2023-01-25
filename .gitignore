@@ -6,7 +6,6 @@
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
-/[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
@@ -71,8 +70,3 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .DS_Store
 .vsconfig
-Assets/ConsolePro
-Assets/Plugins
-Assets/Plugins.meta
-Assets/ConsolePro.meta
-ProjectSettings/PackageManagerSettings.asset
